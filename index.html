@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rapihin</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1 class="logo" id="logo">Rapihin.</h1>
+    <button class="about-button">Tentang Kami</button>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="hero">
+    <div class="hero-content">
+      <h2 class="hero-title">
+        Banyak yang harus dikerjain? Bingung<br />
+        mau atur dari mana? Tenang... pakai Rapihin aja!
+      </h2>
+      <p class="hero-desc">
+        Rapihin bantu kamu ngatur aktivitas harian biar lebih rapi dan nggak bikin stres.
+        Catat tugas, tandai yang udah kelar, dan nikmati tampilan simpel yang bikin fokus makin mudah.
+        Mulai harimu dengan rencana jelas, dan selesaikan semuanya satu per satu tanpa drama.
+      </p>
+      <button class="cta-button" onclick="tampilkanTodo()">Mulai Sekarang!</button>
+    </div>
+  </main>
+
+  <!-- To-Do Input Section -->
+  <section id="todo-section" class="todo-container hidden">
+    <h2 class="todo-title">Masukin daftar tugas-mu disini ya..!</h2>
+    
+    <form class="todo-form" id="todoForm">
+      <div class="form-row">
+        <input type="text" placeholder="Nama tugas mu" name="task" required />
+        <select name="category" required>
+          <option value="" disabled selected>Pilih kategori</option>
+          <option value="Pribadi">Pribadi</option>
+          <option value="Pekerjaan">Pekerjaan</option>
+          <option value="Sekolah">Sekolah</option>
+          <option value="Kampus">Kampus</option>
+        </select>
+      </div>
+      <textarea placeholder="Deskripsi tugas mu" name="description" rows="3" required></textarea>
+      <input type="text" name="time" id="time" placeholder="Pilih tanggal & waktu" required />
+      <button type="submit">Tambahkan</button>
+    </form>
+  </section>
+
+  <!-- Filter + Task List Section -->
+  <section class="process-section hidden">
+    <div class="process-header">
+      <h2>Daftar tugas mu ada dibawah sini yaa</h2>
+      <p>Kamu nggak harus menyelesaikan semuanya sekaligus. Satu langkah kecil pun tetap kemajuan.</p>
+    </div>
+
+    <div class="todo-filter">
+        <button data-filter="all" onclick="filterTodos('all')">Semua</button>
+        <button data-filter="active" onclick="filterTodos('active')">Aktif</button>
+        <button data-filter="completed" onclick="filterTodos('completed')">Selesai</button>
+        <button onclick="deleteCompleted()">Hapus Selesai</button>
+    </div>
+
+    <div class="todo-list-wrapper">
+      <div class="todo-list-container" id="todo-list"></div>
+    </div>
+  </section>
+
+  <!-- Tentang Kami Section -->
+  <section id="about-section" class="about-container hidden">
+    <div class="about-content">
+      <div class="text-wrapper">
+        <h2 class="about-heading">
+            Haii, Perkenalkan saya Muhammad Aufa Rizki Ramadhan, atau bisa dipanggil Masreza.
+        </h2>
+        <p class="about-paragraph">
+            Sebelumnya saya ucapkan, terimakasih banyak karena udah mau menggunakan website sederhana ini untuk membantu menyusun daftar tugas kamu. Website ini merupakan hasil dari mini project saya bersama tim bootcamp RevoU pada kegiatan Software Engineering.
+        </p>
+      </div>
+      <div class="button-wrapper">
+        <a href="#" class="social-button">My Social Media</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup Sosial Media -->
+  <div id="social-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="tutupPopup()">&times;</span>
+      <h3>Temui Saya di:</h3>
+      <ul>
+        <li><a href="https://www.instagram.com/eyywhtzup/" target="_blank">Instagram</a></li>
+        <li><a href="https://id.linkedin.com/in/aufaa-rz-05a3b2246" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="JS/script.js"></script>
+</body>
+</html>

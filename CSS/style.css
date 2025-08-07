@@ -1,0 +1,515 @@
+/* =======================
+   Font dan Reset Global
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #000;
+  padding: 40px;
+}
+
+/* =======================
+   Header dan Navigasi
+========================== */
+.header {
+  display: flex;
+  justify-content: space-between; /* Logo dan tombol berjauhan */
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 600;
+  cursor: pointer; /* Memberi efek klik pada logo */
+}
+
+/* Tombol untuk navigasi "Tentang Kami" */
+.about-button {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.about-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* =======================
+   Hero Section (bagian atas)
+========================== */
+
+.hero {
+  margin-top: 40px;
+  max-width: 1300px;
+  margin: 80px auto;
+  background-color: #B9FF66;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 0px #000;
+  border: 1.5px solid #000;
+}
+
+.hero-content {
+  max-width: 100%;
+}
+
+.hero-title {
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.hero-desc {
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.cta-button {
+  background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #333;
+}
+
+/* =======================
+   Utility Class
+========================== */
+.hidden {
+  display: none;
+}
+
+/* =======================
+   To-Do Form Section
+========================== */
+.todo-container {
+  background-color: #b9ff66;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 0px #000;
+  border: 1.5px solid #000;
+  max-width: 1300px;
+  margin: 80px auto;
+}
+
+.todo-title {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Input, textarea, dan select di form */
+.todo-form input,
+.todo-form textarea {
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 20px;
+  flex: 1;
+}
+
+.todo-form select {
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 20px;
+  flex: 1;
+  appearance: none;
+  cursor: pointer;
+}
+
+.todo-form textarea {
+  resize: none;
+}
+
+.todo-form input[type="time"] {
+  max-width: 150px;
+}
+
+/* Tombol "Tambahkan Tugas" */
+.todo-form button {
+  margin-top: 10px;
+  background-color: transparent;
+  color: #000;
+  border: 2px solid #000;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  box-shadow: 2px 2px 0px #000;
+  transition: all 0.2s ease;
+}
+
+.todo-form button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* =======================
+   Flatpickr Style Kustom
+========================== */
+.todo-form input#time.flatpickr-input {
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 20px;
+  max-width: 250px;
+  flex: 1;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/747/747310.png');
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+
+.todo-form input#time.flatpickr-input:hover {
+  cursor: pointer;
+}
+
+.flatpickr-calendar {
+  font-family: 'Space Grotesk', sans-serif;
+  z-index: 9999; /* Supaya tampil di atas elemen lain */
+}
+
+/* =======================
+   Filter Tugas & Section Proses
+========================== */
+.process-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.process-section.hidden {
+  display: none;
+}
+
+.process-header {
+  margin-bottom: 20px;
+}
+
+.process-header h2 {
+  display: inline-block;
+  background-color: #b9ff66;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 23px;
+}
+
+.process-header p {
+  display: inline-block;
+  margin-left: 12px;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Filter Button (Semua, Aktif, Selesai, dll) */
+.todo-filter {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.todo-filter button {
+  padding: 8px 16px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  background: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todo-filter button.active {
+  background-color: #b9ff66;
+  border-color: #000;
+  color: #000;
+  font-weight: bold;
+}
+
+.todo-filter button:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* =======================
+   Kartu To-Do
+========================== */
+.todo-list-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.todo-card {
+  padding: 20px;
+  border-radius: 20px;
+  border: 1.5px solid #000;
+  box-shadow: 4px 4px 0px #000;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Kartu Aktif dan Selesai */
+.todo-card.active {
+  background-color: #b9ff66;
+}
+
+.todo-card.completed {
+  background-color: #e0e0e0;
+  color: #444;
+}
+
+/* Isi Kartu */
+.todo-card .title {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.todo-card .meta {
+  font-size: 20px;
+  margin: 6px 0;
+}
+
+.todo-card .desc {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+/* Checkbox Bulat */
+.todo-checkbox {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+/* Warna Checkbox jika tugas selesai */
+.todo-card.completed .todo-checkbox {
+  background-color: #444;
+}
+
+/* Tombol Toggle Kartu */
+.toggle-btn {
+  background-color: #fff;
+  font-weight: bold;
+  border: 2px solid #000;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* =======================
+   Wrapper List Tugas
+==========================
+.todo-list-wrapper {
+  max-width: 700px;
+  margin: 40px auto 80px;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: #fff;
+  border: 1.5px solid #000;
+  box-shadow: 4px 4px 0px #000;
+}*/
+.todo-list-wrapper.hidden {
+  display: none;
+}
+
+
+/* Tentang Kami Section */
+.about-container {
+  margin-top: 60px;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1000px;
+  width: 100%;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.text-wrapper {
+  flex: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.about-heading {
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.about-paragraph {
+  font-size: 23px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.social-button {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.social-button:hover {
+  background-color: #333333;
+}
+
+/* ========== Popup Sosial Media ========== */
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 300px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  animation: fadeInUp 0.3s ease;
+}
+
+.popup-content h3 {
+  margin-bottom: 20px;
+}
+
+.popup-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.popup-content li {
+  margin: 10px 0;
+}
+
+.popup-content a {
+  text-decoration: none;
+  color: #0077b5;
+  font-weight: bold;
+}
+
+.popup-content a:hover {
+  text-decoration: underline;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
